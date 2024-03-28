@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/CMakeFiles/bootloader
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/CMakeFiles/bootloader.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/CMakeFiles/bootloader-complete.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Repositorios/EProgramable_FIUNER/firmware/projects/1_blinking_switch/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
