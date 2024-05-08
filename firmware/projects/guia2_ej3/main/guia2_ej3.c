@@ -136,7 +136,7 @@ static void Mostrar(void *pvParameter)
 			{
 				LcdItsE0803Write(distancia);
 			}
-			UartSendString(UART_PC, UartItoa(distancia, 10));
+			UartSendString(UART_PC, (char*)UartItoa(distancia, 10));
 			UartSendString(UART_PC, " cm\r\n");
 		}
 
@@ -183,6 +183,7 @@ void Tecla2()
 void RecibirDato()
 {
 	uint8_t dato;
+	//UartSendString(UART_PC, "Llego dato\r\n");
 	UartReadByte(UART_PC, &dato);
 	switch (dato)
 	{
@@ -219,7 +220,7 @@ void app_main(void)
 		.param_p = NULL};
 
 	TimerInit(&timer_interrupciones);
-
+    //UartSendString(UART_PC, "Inicio ejercicio 3\r\n");
 	xTaskCreate(&Medir, "Measure_HCSR04", 512, NULL, 5, &medir_TaskHandle);
 	xTaskCreate(&Mostrar, "Display", 512, NULL, 5, &mostrar_TaskHandle);
 	//	xTaskCreate(&Teclas, "Switchs", 512, NULL, 5, NULL);
