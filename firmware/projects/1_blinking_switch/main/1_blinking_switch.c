@@ -51,3 +51,5 @@ void app_main(void){
 		vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
 	}
 }
+
+/*==================[end of file]============================================*/

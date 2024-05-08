@@ -1,4 +1,4 @@
-/*! @mainpage Template
+ /*! @mainpage Template
  *
  * @section genDesc General Description
  *

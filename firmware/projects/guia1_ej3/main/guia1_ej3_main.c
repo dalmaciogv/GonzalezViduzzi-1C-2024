@@ -1,14 +1,19 @@
 /*! @mainpage Guia1_Ej3
  *
- * \section genDesc General Description
+ * \section DescripcionGeneral Proyecto 1 - Ejercicio 3
  *
- * This project makes the exercise 3 of the guia 1.
+ * Mediante una funcion se recibe un puntero a una estructura LED y se controla su funcionamiento
+ * con los modos ON, OFF y TOGGLE -encendido, apagado y titileo (a cierta frecuencia)-
+ *
+ * Para mas informacion consultar el siguiente diagrama de flujo que se utilizo como guia para la implementacion
+ * Diagrama de flujo --- ver imagen en la consigna 3
+ * https://docs.google.com/document/d/1f4OtorkZ1hOFu-jOo0Uhmz-cJnUvV05Z-eNhs19IVZM/edit
  *
  * @section changelog Changelog
  *
- * |   Date	    | Description                                    |
+ * |   Fecha    | Descripcion                                    |
  * |:----------:|:-----------------------------------------------|
- * | 13/03/2024 | Document creation		                         |
+ * | 13/03/2024 | Creacion del documento                         |
  *
  * @author Gonzalez Viduzzi Dalmacio (dgonzalezviduzzi@gmail.com)
  *
@@ -21,32 +26,51 @@
 #include <freertos/task.h>
 #include <led.h>
 /*==================[macros and definitions]=================================*/
-
+/** @def ON
+ * @brief Enciende el LED
+*/
 #define ON 1
+
+/** @def OFF
+ * @brief Apaga el LED
+*/
 #define OFF 0
+
+/** @def TOGGLE
+ * @brief Hace titilar el LED
+*/
 #define TOGGLE 2
+
+/** @def CONFIG_BLINK_PERIOD
+ * @brief Establece un periodo con el que titila el LED
+*/
 #define CONFIG_BLINK_PERIOD 100
 
 /*==================[internal data definition]===============================*/
-
+/** @fn my_leds 
+ * @brief Estructura LED para controlar los mismos  
+ * @param mode modo del led, que puede ser ON, OFF o TOGGLE 
+ * @param n_led indica el número de led a controlar
+ * @param n_ciclos indica la cantidad de ciclos de encendido/apagado
+ * @param periodo //indica el tiempo de cada ciclo
+ */
 struct leds
 {
-    uint8_t mode;       //ON, OFF, TOGGLE
-	uint8_t n_led;      //indica el número de led a controlar
-	uint8_t n_ciclos;   //indica la cantidad de ciclos de ncendido/apagado
-	uint16_t periodo;    //indica el tiempo de cada ciclo
+    uint8_t mode;
+	uint8_t n_led;
+	uint8_t n_ciclos;
+	uint16_t periodo;
 } my_leds;
 
 /*==================[internal functions declaration]=========================*/
-
-void controlLed( struct leds * LED );
-
-//Implementacion
-
+/** @fn void controlLed( struct leds * LED )
+ * @brief Metodo por el cual se controla 3 leds diferentes, cada uno con 3 modos de funcionamiento
+ * @param LED puntero a una estructura LED
+ * @return
+*/
 void controlLed( struct leds * LED )
 {
 	uint8_t i = 0;
-	//uint8_t j = 0;
 
 	switch(LED->mode)
 	{
@@ -106,8 +130,8 @@ void controlLed( struct leds * LED )
 		break;
 		}
 
-		case TOGGLE:							//si MODE TOGGLE
-		{										//titila el led que corresponda hasta que i sea mayor que n_ciclos
+		case TOGGLE:							//si MODE TOGGLE titila el led que corresponda hasta que i sea mayor que n_ciclos
+		{										
 			while(i<(LED->n_ciclos))
 			{
 				switch (LED->n_led)
@@ -134,7 +158,7 @@ void controlLed( struct leds * LED )
 				break;
 				}	//fin del switch
 
-			i++;								//y luego incrementa i
+			i++;								//incrementa i
 
 			uint16_t delay = LED->periodo/CONFIG_BLINK_PERIOD; //asigno periodo a la variable delay
 
@@ -156,7 +180,6 @@ void controlLed( struct leds * LED )
 
 void app_main(void)
 {
-	//uint8_t teclas;   //inicializacion
 	LedsInit();
 	my_leds.mode = TOGGLE;
 	my_leds.n_led = 1;
