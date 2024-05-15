@@ -5,6 +5,10 @@
             "path": "drivers"
         },
         {
+            "name": "middelware",
+            "path": "middelware"
+        },
+        {
             "name": "x_template",
             "path": "projects/x_template"
         },
@@ -45,19 +49,24 @@
             "path": "projects/guia2_ej1"
         },
         {
+            "name": "guia2_ej2",
             "path": "projects/guia2_ej2"
         },
         {
+            "name": "guia2_ej3",
             "path": "projects/guia2_ej3"
         },
         {
+            "name": "guia2_ej4",
             "path": "projects/guia2_ej4"
         },
         {
+            "name": "guia2_ejercicio4",
             "path": "projects/guia2_ejercicio4"
         },
         {
-            "path": "projects/Proyecto integrador"
+            "name": "Proyecto_integrador",
+            "path": "projects/Proyecto_integrador"
         }
     ],
     "settings": {
