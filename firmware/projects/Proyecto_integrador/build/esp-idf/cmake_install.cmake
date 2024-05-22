@@ -417,3 +417,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/drivers/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/cmake_install.cmake")
+endif()
+

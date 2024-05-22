@@ -34,6 +34,7 @@ C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/bu
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/wpa_supplicant/libwpa_supplicant.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/esp_coex/libesp_coex.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/esp_wifi/libesp_wifi.a
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/bt/libbt.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/unity/libunity.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/cmock/libcmock.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/console/libconsole.a
@@ -63,3 +64,4 @@ C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/bu
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/main/libmain.a
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/drivers/libdrivers.a
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/libmiddelware.a

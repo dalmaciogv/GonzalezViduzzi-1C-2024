@@ -391,6 +391,7 @@ C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/bu
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/esp_wifi/CMakeFiles/install.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/esp_wifi/CMakeFiles/install/local.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/esp_wifi/CMakeFiles/install/strip.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/bt/CMakeFiles/edit_cache.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/bt/CMakeFiles/list_install_components.dir
@@ -636,3 +637,10 @@ C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/bu
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/drivers/CMakeFiles/install.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/drivers/CMakeFiles/install/local.dir
 C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/drivers/CMakeFiles/install/strip.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/__idf_middelware.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/edit_cache.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/rebuild_cache.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/list_install_components.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/install.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/install/local.dir
+C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/middelware/CMakeFiles/install/strip.dir

@@ -1,12 +1,12 @@
 {
     "folders": [
         {
-            "name": "drivers",
-            "path": "drivers"
-        },
-        {
             "name": "middelware",
             "path": "middelware"
+        },
+        {
+            "name": "drivers",
+            "path": "drivers"
         },
         {
             "name": "x_template",

@@ -26,6 +26,9 @@ set(srcs
     "devices/src/hx711.c"
     "devices/src/mpu6050.c"
     "devices/src/buzzer.c"
+    "devices/src/heartRate.c"
+    "devices/src/max3010x.c"
+    "devices/src/spo2_algorithm.c"
     )
 
 # Always included headers
