@@ -33,6 +33,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "string.h"
+#include "switch.h"
 
 /*==================[macros and definitions]=================================*/
 /** @def AD_SAMPLE_PERIOD
@@ -101,7 +102,7 @@ void FuncTimerMostrar(void *param)
  * @param volt voltaje que corresponde a una medicion de pH
  * @return pH_aux
  */
-uint32_t getpH(uint16_t volt)
+uint32_t getpH(uint32_t volt)
 {
 	uint32_t aux = 14 / 3000; // Factor de conversion, segun la relacion 0V-3V con pH de 0 a 14
 							  // se utiliza el valor de voltaje en milivotls (mV)
@@ -109,41 +110,45 @@ uint32_t getpH(uint16_t volt)
 	return pH_aux;
 }
 
+void Tecla1(timer_config_t timer_ADC, timer_config_t timer_Mostrar)
+{
+	TimerStart(timer_ADC.timer);
+	TimerStart(timer_Mostrar.timer);
+	UartSendString(UART_PC, "Iniciando el sistema.");
+}
 
+void Tecla2(timer_config_t timer_ADC, timer_config_t timer_Mostrar){
+	GPIODeinit();
+	TimerReset(timer_ADC.timer);
+	TimerReset(timer_Mostrar.timer);
+	UartSendString(UART_PC, "Deteniendo el sistema.");
+}
 /*==================[external functions definition]==========================*/
 void app_main(void)
 {
-
 	// Creo la estructura del tipo gpioConf_t que contienen el puerto GPIO_20
 	// con sus correspondiente direccion(entrada/salida)
 	gpioConf_t pin =
 		{GPIO_20, GPIO_INPUT};
 
-	// Inicializo el puertos GPIO
-
-	GPIOInit(pin.pin, pin.dir);
-
-	timer_config_t timer_ADC = {// Inicializacion del timer
+	timer_config_t timer_ADC = {// Configuracion del timer
 								.timer = TIMER_A,
 								.period = AD_SAMPLE_PERIOD,
 								.func_p = FuncTimerADC,
 								.param_p = NULL};
-	TimerInit(&timer_ADC);
 
-	timer_config_t timer_Mostrar = {// Inicializacion del timer
+	timer_config_t timer_Mostrar = {// Configuracion del timer
 									.timer = TIMER_B,
 									.period = SHOW_PERIOD,
 									.func_p = FuncTimerMostrar,
 									.param_p = NULL};
-	TimerInit(&timer_Mostrar);
 
-	serial_config_t puerto_serie = {// Inicializacion del puerto serie
+	serial_config_t puerto_serie = {// Configuracion del puerto serie
 									.baud_rate = 115200,
 									.port = UART_PC,
 									.func_p = NULL,
 									.param_p = NULL};
-	// Inicializacion del puerto serie
-	UartInit(&puerto_serie);
+
 
 	// Configuracion del AD Convert
 	analog_input_config_t config_ADC =
@@ -154,13 +159,23 @@ void app_main(void)
 			.param_p = NULL,	/*!< Pointer to callback function parameters (only for continuous mode) */
 			.sample_frec = 0	/*!< Sample frequency min: 20kHz - max: 2MHz (only for continuous mode)  */
 		};
+
+	SwitchesInit();
+	// Inicializo el puertos GPIO
+	GPIOInit(pin.pin, pin.dir);
+	TimerInit(&timer_ADC);
+	TimerInit(&timer_Mostrar);
+	// Inicializacion del puerto serie
+	UartInit(&puerto_serie);
 	// Inicializacion del AD Convert
 	AnalogInputInit(&config_ADC);
 
-	xTaskCreate(&ADConvert, "conversor AD", 4096, NULL, 5, &ADC_TaskHandle);
-	xTaskCreate(&Mostrar, "Mostrar", 4096, NULL, 5, &Mostrar_TaskHandle);
+	SwitchActivInt(SWITCH_1, &Tecla1, NULL);
+	SwitchActivInt(SWITCH_2, &Tecla2, NULL);
 
-	TimerStart(timer_ADC.timer);
-	TimerStart(timer_Mostrar.timer);
+	xTaskCreate(&ADConvert, "conversor DA", 512, NULL, 5, &ADC_TaskHandle);
+    xTaskCreate(&Mostrar, "Mostrar", 4096, NULL, 5, &Mostrar_TaskHandle);
+
+
 }
 /*==================[end of file]============================================*/
