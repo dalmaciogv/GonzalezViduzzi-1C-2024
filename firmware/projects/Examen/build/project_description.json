@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "Examen",
-    "project_version":    "123bd170-dirty",
+    "project_version":    "cf9a1cf9-dirty",
     "project_path":       "C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Examen",
     "idf_path":           "C:/Users/alumno/esp/v5.2.2/esp-idf",
     "build_dir":          "C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Examen/build",

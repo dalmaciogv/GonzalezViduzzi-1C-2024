@@ -42,6 +42,7 @@
  */
 #define AD_SAMPLE_PERIOD 3000 // el sensor de PH mide cada 3s
 #define SHOW_PERIOD 5000	  // se muestra por el puerto serie el estado de las variables cada 5s
+#define CONTROL_PERIOD 3000
 uint32_t pH;				  // variable donde se almacena el valor actual del pH
 bool humedad;
 /*==================[internal data definition]===============================*/
@@ -50,6 +51,7 @@ bool humedad;
 
 TaskHandle_t ADC_TaskHandle = NULL;
 TaskHandle_t Mostrar_TaskHandle = NULL;
+TaskHandle_t Control_TaskHandle = NULL;
 
 /** @fn gpioConf_t
  * @brief Estructura que representa un puerto GPIO
@@ -61,6 +63,29 @@ typedef struct
 	gpio_t pin; /*!< GPIO pin number */
 	io_t dir;	/*!< GPIO direction '0' IN;  '1' OUT*/
 } gpioConf_t;
+
+static void Control(void *pvParameter, gpioConf_t pin[]){
+	bool humedad_anterior=humedad;
+	humedad = GPIORead(pin[0].pin);
+	if(humedad!=humedad_anterior){
+		if(humedad)
+		{GPIOOn(pin[1].pin);
+		UartSendString(UART_PC, "Bomba de agua encendida.");}
+		else{GPIOOff(pin[1].pin);
+		UartSendString(UART_PC, "Bomba de agua apagada.");}
+	}
+	if(pH<6 || pH>6.7){
+		if(GPIORead(pin[2].pin) == false)
+		{GPIOOn(pin[2].pin);
+		UartSendString(UART_PC, "Bomba de pH encendida.");}
+	}
+	else
+	{
+		if(GPIORead(pin[2].pin)){
+		GPIOOff(pin[2].pin);
+		UartSendString(UART_PC, "Bomba de pH apagada.");
+	}
+}
 
 static void ADConvert(void *pvParameter)
 {
@@ -97,6 +122,11 @@ void FuncTimerMostrar(void *param)
 	xTaskNotifyGive(Mostrar_TaskHandle); /*Envia una notificacion*/
 }
 
+void FuncTimerControl(void *param)
+{
+	xTaskNotifyGive(Control_TaskHandle); /*Envia una notificacion*/
+}
+
 /** @fn getpH
  * @brief A partir de un voltaje dado, devuelve el valor del pH correspondiente
  * @param volt voltaje que corresponde a una medicion de pH
@@ -110,17 +140,19 @@ uint32_t getpH(uint32_t volt)
 	return pH_aux;
 }
 
-void Tecla1(timer_config_t timer_ADC, timer_config_t timer_Mostrar)
+void Tecla1(timer_config_t timer_ADC, timer_config_t timer_Mostrar, timer_config_t timer_Control)
 {
 	TimerStart(timer_ADC.timer);
 	TimerStart(timer_Mostrar.timer);
+	TimerStart(timer_Control.timer);
 	UartSendString(UART_PC, "Iniciando el sistema.");
 }
 
-void Tecla2(timer_config_t timer_ADC, timer_config_t timer_Mostrar){
+void Tecla2(timer_config_t timer_ADC, timer_config_t timer_Mostrar, timer_config_t timer_Control){
 	GPIODeinit();
 	TimerReset(timer_ADC.timer);
 	TimerReset(timer_Mostrar.timer);
+	TimerReset(timer_Control.timer);
 	UartSendString(UART_PC, "Deteniendo el sistema.");
 }
 /*==================[external functions definition]==========================*/
@@ -128,8 +160,8 @@ void app_main(void)
 {
 	// Creo la estructura del tipo gpioConf_t que contienen el puerto GPIO_20
 	// con sus correspondiente direccion(entrada/salida)
-	gpioConf_t pin =
-		{GPIO_20, GPIO_INPUT};
+	gpioConf_t pin[3] =
+		{{GPIO_20, GPIO_INPUT},{GPIO_21, GPIO_OUTPUT},{GPIO_22, GPIO_OUTPUT}};
 
 	timer_config_t timer_ADC = {// Configuracion del timer
 								.timer = TIMER_A,
@@ -141,6 +173,12 @@ void app_main(void)
 									.timer = TIMER_B,
 									.period = SHOW_PERIOD,
 									.func_p = FuncTimerMostrar,
+									.param_p = NULL};
+
+	timer_config_t timer_Control = {// Configuracion del timer
+									.timer = TIMER_C,
+									.period = CONTROL_PERIOD,
+									.func_p = FuncTimerControl,
 									.param_p = NULL};
 
 	serial_config_t puerto_serie = {// Configuracion del puerto serie
@@ -161,10 +199,13 @@ void app_main(void)
 		};
 
 	SwitchesInit();
-	// Inicializo el puertos GPIO
-	GPIOInit(pin.pin, pin.dir);
+	// Inicializo los puertos GPIO
+	for(int i=0; i<3; i++){
+	GPIOInit(pin[i].pin, pin[i].dir);}
+
 	TimerInit(&timer_ADC);
 	TimerInit(&timer_Mostrar);
+	TimerInit(&timer_Control);
 	// Inicializacion del puerto serie
 	UartInit(&puerto_serie);
 	// Inicializacion del AD Convert
@@ -175,7 +216,7 @@ void app_main(void)
 
 	xTaskCreate(&ADConvert, "conversor DA", 512, NULL, 5, &ADC_TaskHandle);
     xTaskCreate(&Mostrar, "Mostrar", 4096, NULL, 5, &Mostrar_TaskHandle);
-
+    xTaskCreate(&Control, "Control", 4096, NULL, 5, &Control_TaskHandle);
 
 }
 /*==================[end of file]============================================*/
