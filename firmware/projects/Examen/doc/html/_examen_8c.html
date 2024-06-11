@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examen: Referencia del archivo C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Examen/main/Examen.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Examen<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Examen</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_examen_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Estructuras de datos</a> &#124;
+<a href="#define-members">defines</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Examen.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+</div>
+<p><a href="_examen_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgpio_conf__t.html">gpioConf_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a18df7f92f55f02bfbc5105dd699cb93e" id="r_a18df7f92f55f02bfbc5105dd699cb93e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18df7f92f55f02bfbc5105dd699cb93e">AD_SAMPLE_PERIOD</a>&#160;&#160;&#160;3000</td></tr>
+<tr class="memdesc:a18df7f92f55f02bfbc5105dd699cb93e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece un periodo de medicion, expresado en milisegundos se mide cada 3 segundos.  <br /></td></tr>
+<tr class="separator:a18df7f92f55f02bfbc5105dd699cb93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af171211f0f17226ace962656e1f7338c" id="r_af171211f0f17226ace962656e1f7338c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af171211f0f17226ace962656e1f7338c">SHOW_PERIOD</a>&#160;&#160;&#160;5000</td></tr>
+<tr class="memdesc:af171211f0f17226ace962656e1f7338c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establece un periodo con el que se muestran los datos, expresado en milisegundos se muestran cada 5 segundos.  <br /></td></tr>
+<tr class="separator:af171211f0f17226ace962656e1f7338c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36dcc5b8d483f93687711244b6a11ef" id="r_af36dcc5b8d483f93687711244b6a11ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af36dcc5b8d483f93687711244b6a11ef">CONTROL_PERIOD</a>&#160;&#160;&#160;3000</td></tr>
+<tr class="separator:af36dcc5b8d483f93687711244b6a11ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a831fbd8822e00dfca8cabe292ca8085d" id="r_a831fbd8822e00dfca8cabe292ca8085d"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a831fbd8822e00dfca8cabe292ca8085d">pH</a></td></tr>
+<tr class="separator:a831fbd8822e00dfca8cabe292ca8085d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa936fa27f304083f08c7534b2b100ab5" id="r_aa936fa27f304083f08c7534b2b100ab5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa936fa27f304083f08c7534b2b100ab5">humedad</a></td></tr>
+<tr class="separator:aa936fa27f304083f08c7534b2b100ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aaeedb4a841eac29a91bceee20c59d2" id="r_a2aaeedb4a841eac29a91bceee20c59d2"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aaeedb4a841eac29a91bceee20c59d2">ADC_TaskHandle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a2aaeedb4a841eac29a91bceee20c59d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ecfa8b180d84ce801d8d2be84404f9" id="r_a42ecfa8b180d84ce801d8d2be84404f9"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42ecfa8b180d84ce801d8d2be84404f9">Mostrar_TaskHandle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a42ecfa8b180d84ce801d8d2be84404f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e3248e308990a0f7521b608b21cc6a" id="r_a13e3248e308990a0f7521b608b21cc6a"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13e3248e308990a0f7521b608b21cc6a">Control_TaskHandle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a13e3248e308990a0f7521b608b21cc6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a18df7f92f55f02bfbc5105dd699cb93e" name="a18df7f92f55f02bfbc5105dd699cb93e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18df7f92f55f02bfbc5105dd699cb93e">&#9670;&#160;</a></span>AD_SAMPLE_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AD_SAMPLE_PERIOD&#160;&#160;&#160;3000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece un periodo de medicion, expresado en milisegundos se mide cada 3 segundos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00048">48</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<a id="af36dcc5b8d483f93687711244b6a11ef" name="af36dcc5b8d483f93687711244b6a11ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36dcc5b8d483f93687711244b6a11ef">&#9670;&#160;</a></span>CONTROL_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTROL_PERIOD&#160;&#160;&#160;3000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00060">60</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<a id="af171211f0f17226ace962656e1f7338c" name="af171211f0f17226ace962656e1f7338c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af171211f0f17226ace962656e1f7338c">&#9670;&#160;</a></span>SHOW_PERIOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SHOW_PERIOD&#160;&#160;&#160;5000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Establece un periodo con el que se muestran los datos, expresado en milisegundos se muestran cada 5 segundos. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00054">54</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a2aaeedb4a841eac29a91bceee20c59d2" name="a2aaeedb4a841eac29a91bceee20c59d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aaeedb4a841eac29a91bceee20c59d2">&#9670;&#160;</a></span>ADC_TaskHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t ADC_TaskHandle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00075">75</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<a id="a13e3248e308990a0f7521b608b21cc6a" name="a13e3248e308990a0f7521b608b21cc6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13e3248e308990a0f7521b608b21cc6a">&#9670;&#160;</a></span>Control_TaskHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t Control_TaskHandle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00077">77</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<a id="aa936fa27f304083f08c7534b2b100ab5" name="aa936fa27f304083f08c7534b2b100ab5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa936fa27f304083f08c7534b2b100ab5">&#9670;&#160;</a></span>humedad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool humedad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00070">70</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<a id="a42ecfa8b180d84ce801d8d2be84404f9" name="a42ecfa8b180d84ce801d8d2be84404f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ecfa8b180d84ce801d8d2be84404f9">&#9670;&#160;</a></span>Mostrar_TaskHandle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t Mostrar_TaskHandle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00076">76</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+<a id="a831fbd8822e00dfca8cabe292ca8085d" name="a831fbd8822e00dfca8cabe292ca8085d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831fbd8822e00dfca8cabe292ca8085d">&#9670;&#160;</a></span>pH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t pH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_examen_8c_source.html#l00065">65</a> del archivo <a class="el" href="_examen_8c_source.html">Examen.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_338697e93696c81168b8a6cd7144c902.html">GonzalezViduzzi-1C-2024</a></li><li class="navelem"><a class="el" href="dir_3604bf97c4d27dfd6ec9b3c8f610725d.html">firmware</a></li><li class="navelem"><a class="el" href="dir_30c02a5ea0d11aeac7ea5bf3e360eaf2.html">projects</a></li><li class="navelem"><a class="el" href="dir_c91dc9cf230db219e5df4aea0a3824e1.html">Examen</a></li><li class="navelem"><a class="el" href="dir_2094eb0fcadcfcf724c21f29f2e824f9.html">main</a></li><li class="navelem"><a class="el" href="_examen_8c.html">Examen.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>
