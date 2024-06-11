@@ -127,7 +127,8 @@
             "i2c_mcu.h": "c",
             "bitset": "c",
             "initializer_list": "c",
-            "regex": "c"
+            "regex": "c",
+            "stdio.h": "c"
         },
     },
     "tasks": {

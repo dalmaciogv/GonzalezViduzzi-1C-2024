@@ -32,19 +32,23 @@
 #include "timer_mcu.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "string.h"
 
 /*==================[macros and definitions]=================================*/
 /** @def AD_SAMPLE_PERIOD
  * @brief Establece un periodo de medicion, expresado en milisegundos
  * se mide cada 3 segundos
  */
-#define AD_SAMPLE_PERIOD 3000
-uint32_t pH;
+#define AD_SAMPLE_PERIOD 3000 // el sensor de PH mide cada 3s
+#define SHOW_PERIOD 5000	  // se muestra por el puerto serie el estado de las variables cada 5s
+uint32_t pH;				  // variable donde se almacena el valor actual del pH
+bool humedad;
 /*==================[internal data definition]===============================*/
 
 /*==================[internal functions declaration]=========================*/
 
 TaskHandle_t ADC_TaskHandle = NULL;
+TaskHandle_t Mostrar_TaskHandle = NULL;
 
 /** @fn gpioConf_t
  * @brief Estructura que representa un puerto GPIO
@@ -68,9 +72,28 @@ static void ADConvert(void *pvParameter)
 	}
 }
 
+void Mostrar (void *pvParameter){
+	string hum_str;
+	if(humedad){
+		hum_str = "humedad correcta.";
+	}
+	else{
+		hum_str = "humedad incorrecta.";
+	}
+	UartSendString(UART_PC, "pH: ");
+	UartSendString(UART_PC, (char*)UartItoa(pH, 10));
+	UartSendString(UART_PC, ", ");
+	UartSendString(UART_PC, hum_str);
+}
+
 void FuncTimerADC(void *param)
 {
-	xTaskNotifyGive(ADC_TaskHandle); /* Envía una notificación a la tarea asociada al LED_1 */
+	xTaskNotifyGive(ADC_TaskHandle); /*Envia una notificacion*/
+}
+
+void FuncTimerMostrar(void *param)
+{
+	xTaskNotifyGive(Mostrar_TaskHandle); /*Envia una notificacion*/
 }
 
 /** @fn getpH
@@ -85,6 +108,7 @@ uint32_t getpH(uint16_t volt)
 	uint32_t pH_aux = volt * aux;
 	return pH_aux;
 }
+
 
 /*==================[external functions definition]==========================*/
 void app_main(void)
@@ -106,6 +130,13 @@ void app_main(void)
 								.param_p = NULL};
 	TimerInit(&timer_ADC);
 
+	timer_config_t timer_Mostrar = {// Inicializacion del timer
+									.timer = TIMER_B,
+									.period = SHOW_PERIOD,
+									.func_p = FuncTimerMostrar,
+									.param_p = NULL};
+	TimerInit(&timer_Mostrar);
+
 	serial_config_t puerto_serie = {// Inicializacion del puerto serie
 									.baud_rate = 115200,
 									.port = UART_PC,
@@ -126,7 +157,10 @@ void app_main(void)
 	// Inicializacion del AD Convert
 	AnalogInputInit(&config_ADC);
 
-	xTaskCreate(&ADC_TaskHandle, "conversor AD", 4096, NULL, 5, &ADConvert);
+	xTaskCreate(&ADConvert, "conversor AD", 4096, NULL, 5, &ADC_TaskHandle);
+	xTaskCreate(&Mostrar, "Mostrar", 4096, NULL, 5, &Mostrar_TaskHandle);
+
 	TimerStart(timer_ADC.timer);
+	TimerStart(timer_Mostrar.timer);
 }
 /*==================[end of file]============================================*/
