@@ -67,6 +67,9 @@
         {
             "name": "Proyecto_integrador",
             "path": "projects/Proyecto_integrador"
+        },
+        {
+            "path": "projects/Examen"
         }
     ],
     "settings": {
