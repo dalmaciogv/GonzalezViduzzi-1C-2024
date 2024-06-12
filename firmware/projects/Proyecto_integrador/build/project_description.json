@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "Proyecto_integrador",
-    "project_version":    "bc070e69-dirty",
+    "project_version":    "2f44518e-dirty",
     "project_path":       "C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador",
     "idf_path":           "C:/Users/alumno/esp/v5.2/esp-idf",
     "build_dir":          "C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build",
