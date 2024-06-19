@@ -7,7 +7,7 @@
   BSD license, all text above must be included in any redistribution.
  *****************************************************/
 
-#include "MAX3010X.h"
+#include "max3010x.h"
 #include "i2c_mcu.h"
 #include "string.h"
 #include "delay_mcu.h"

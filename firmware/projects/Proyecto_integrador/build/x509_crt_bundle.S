@@ -1,4 +1,4 @@
-/* * Data converted from C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from /home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

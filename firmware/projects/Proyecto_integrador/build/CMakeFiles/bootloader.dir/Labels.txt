@@ -1,13 +1,13 @@
 # Target labels
  bootloader
 # Source files and their labels
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/CMakeFiles/bootloader
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/CMakeFiles/bootloader.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/CMakeFiles/bootloader-complete.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
-C:/Repositorios/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/CMakeFiles/bootloader
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/CMakeFiles/bootloader.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/CMakeFiles/bootloader-complete.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/fiuner/Documentos/GonzalezViduzzi-1C-2024/firmware/projects/Proyecto_integrador/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
